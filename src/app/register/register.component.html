@@ -1,0 +1,24 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+    <label for="email">Email</label>
+    <input id="email" type="text" formControlName="email">
+
+    <div formGroupName="address">
+        <h4>Address</h4>
+        <label for="street">Street: </label>
+        <input id="street" type="text" formControlName="street">
+        <label for="city">City: </label>
+        <input id="city" type="text" formControlName="city">
+        <label for="state">State: </label>
+        <input id="state" type="text" formControlName="state">
+        <label for="zip">Zip Code: </label>
+        <input id="zip" type="text" formControlName="zip">
+    </div>
+    <p>Complete the form to enable button.</p>
+    <a href="/register">Please register</a>
+    <br>
+    <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+</form>
